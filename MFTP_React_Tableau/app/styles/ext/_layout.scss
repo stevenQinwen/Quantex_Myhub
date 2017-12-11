@@ -1,0 +1,37 @@
+// Name           layout
+//
+// 存放一些布局相关的样式
+
+$layout-side-width: 227px !default; // 左侧栏宽度
+$layout-space: 12px !default; // 左右侧栏间空隙
+
+$layout-prefix-cls: "#{$ns}layout";
+
+:global {
+
+  .#{$layout-prefix-cls} {
+    &-has-sider {
+      height: 100%;
+      padding: $global-spacer;
+      overflow: hidden;
+      background-color: transparent;
+    }
+
+    &-sider {
+      flex: none !important; // 覆盖蚂蚁组件 flex 设置
+      width: $layout-side-width !important;
+      margin-right: $layout-space;
+      overflow: auto;
+      background-color: #fff;
+
+      // 此类是蚂蚁组件生成的样式类
+      .ant-layout-sider-children {
+        height: 100%;
+      }
+    }
+    
+    &-content {
+      overflow: auto;
+    }
+  }
+}

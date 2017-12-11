@@ -1,0 +1,68 @@
+:global{
+  .search-table {
+    .ant-table-column-sorter {
+      vertical-align: top;
+    }
+    .search-table-filter {
+      min-width: 97px;
+      border-radius: 4px;
+      p {padding: 7px 8px;}
+      .ant-select {
+        padding: 7px 8px;
+      }
+      .ant-checkbox-wrapper:not(:last-child) {
+        margin: 0;
+      }
+      .search-table-filter-checkbox {
+        width: 100%;
+        .ant-checkbox-group {
+          width: 100%;
+        }
+        .ant-checkbox-wrapper {
+          display: block;
+          padding: 7px 8px;
+          &:hover {
+            background: #ecf6fd;
+          }
+          &.checked {
+            background: #ecf6fd;
+            color: #108ee9;
+          }
+        }
+      }
+      .ant-radio-wrapper:not(:last-child) {
+        margin: 0;
+      }
+      .search-table-filter-radio {
+        width: 100%;
+        .ant-radio-wrapper {
+          display: block;
+          padding: 7px 8px;
+          &:hover {
+            background: #ecf6fd;
+          }
+          &.checked {
+            background: #ecf6fd;
+            color: #108ee9;
+          }
+        }
+      }
+      .search-table-filter-date-range-picker {
+        overflow: hidden;
+        padding: 7px 8px;
+      }
+      .search-table-filter-input-group {
+        padding: 7px 8px;
+        .input-group-item.input-group-item-has-index {
+          width: 50%;
+        }
+      }
+    }
+    .search-table-filter-footer {
+      border-top: 1px solid #e3e8ee;
+      padding: 7px 8px;
+      overflow: hidden;
+    }
+  }
+  .ant-form .ant-form-item.search-table-filter-item { margin: 0; }
+}

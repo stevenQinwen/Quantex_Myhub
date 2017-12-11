@@ -1,0 +1,71 @@
+@import "styles/core/tools/colors";
+
+.root {
+  background-color: #fff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .titleBox{
+    display: flex;
+    flex-direction: column;
+  }
+  .title {
+    padding: 8px;
+    border-bottom: 1px solid $grey-5;
+    line-height: 22px;
+    font-weight: 700;
+    color: $grey-8;
+    &.link {
+      color: #108ee9;
+      cursor: pointer;
+    }
+  }
+  .searchBtn{
+    margin:8px 0;
+  }
+  :global {
+    .ant-input {
+      border-radius: 0;
+      border: 1px solid #e9e9e9;
+    }
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1px;
+    overflow: auto;
+    flex:1;
+    dt {
+      height: 28px;
+      color: #444;
+      padding: 4px 11px;
+      cursor: pointer;
+      border-bottom: 1px solid #e9e9e9;
+      &:nth-child(odd) {
+        background-color: #fbfbfb;
+      }
+      &:hover {
+        background-color: #ecf6fd;
+      }
+    }
+    // &.hasTitle{
+    //   height: calc(100% - 49px);
+    // }
+    :global {
+      dt.list-select-item-selected {
+        background-color: #d2eafb;
+      }
+      dt.placeholder {
+        color: rgba(0, 0, 0, 0.43);
+        background-color: #fff;
+        text-align: center;
+        i {
+          vertical-align: bottom;
+          &:before {
+            margin-right: 4px;
+          }
+        }
+      }
+    }
+  }
+}

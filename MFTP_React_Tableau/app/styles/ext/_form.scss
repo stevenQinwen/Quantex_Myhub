@@ -1,0 +1,207 @@
+// Name          form
+//
+// Description:            存放 form 相关的样式类, 包含覆盖蚂蚁 Form 组件样式类
+// =======================================================
+
+$form-item-margin-bottom: 18px;
+
+:global {
+
+  // 覆盖蚂蚁 Form 组件样式类
+  .ant-form {
+    .ant-form-item {
+      margin-bottom: $form-item-margin-bottom;
+      .ant-form-item-label {
+        line-height: $input-height;
+        padding: 0;
+      }
+      .ant-form-item-control {
+        line-height: 1;
+        .ant-checkbox-wrapper {
+          line-height: $input-height;
+        }
+        input, .ant-select-selection {
+          border-radius: $input-border-radius;
+        }
+        input[disabled], .ant-select-disabled > .ant-select-selection {
+          border-color: $input-bg-disabled;
+          color: $input-color;
+        }
+        .ant-input-number-disabled {
+          div, .ant-input-number-input-wrap {
+            border: $input-bg-disabled;
+          }
+        }
+      }
+    }
+  }
+
+  // 按照 24 栅格系统封装
+  // 用例 qx-form-col-7-17
+  // ================================================
+
+  // label 和 control 组合
+  $cols: (
+    3: 21,
+    4: 20,
+    5: 19,
+    6: 18,
+    7: 17,
+    8: 16
+  );
+
+  // form-basic
+  %form-basic {
+    font-size: 12px;
+    color: $input-color;
+
+    // overwrite antd form
+    .ant-form-item {
+      display: flex;
+    }
+
+    // 类似于form,仅用于展示readonly
+    .form-item {
+      display: flex;
+      margin-bottom: $form-item-margin-bottom;
+      height: $input-height;
+      line-height: $input-height;
+
+      &:before {
+        content: " ";
+        display: table;
+      }
+
+      .form-label {
+        text-align: right;
+
+        @extend %ellipsis-basic;
+
+        &:after { // 间隔
+          content: "";
+          margin: 0 8px 0 2px;
+          position: relative;
+          top: -0.5px;
+        }
+      }
+
+      .form-control {
+
+        @mixin readonly-color {
+          color: $input-color;
+          border-color: $input-bg-readonly;
+          background-color: $input-bg-readonly;
+        }
+
+        text-indent: 7px;
+        border-radius: $input-border-radius;
+        background-color: $input-bg-readonly;
+
+        @extend %ellipsis-basic;
+
+        input[disabled], .ant-select-disabled > .ant-select-selection {
+          border: none;
+          color: $input-color;
+        }
+
+        .ant-input-group-wrapper {
+          display: flex;
+          input.ant-input-disabled {
+            @include readonly-color;
+          }
+        }
+
+        .ant-input-number-disabled {
+          div, .ant-input-number-input-wrap, input.ant-input-number-input {
+            @include readonly-color;
+          }
+        }
+
+        span.ant-cascader-picker-disabled {
+          .ant-cascader-picker-label {
+            @include readonly-color;
+            padding: 0;
+          }
+        }
+
+        span.ant-input-group-addon,
+        .addon-after {
+          border: 1px solid $addon-bg-color;
+        }
+      }
+    }
+    // 用途提示信息样式, 与 form-item 同级用
+    .form-item-tip {
+      margin-top: -($form-item-margin-bottom - 2); // -16px
+      &:before {
+        content: "";
+      }
+    }
+  }
+
+  // 生成 qx-form-col-7-17 等相关布局
+  @each $labelCol, $controlCol in ($cols) {
+    .#{$ns}form-col-#{$labelCol}-#{$controlCol} {
+
+      @extend %form-basic; // form 基本样式
+
+      .ant-form-item .ant-form-item-label,  // 覆盖蚂蚁组件
+      .form-item .form-label, // 自定义form
+      .form-item-tip:before {  // 用于提示信息样式, 与 form-item 同级用
+        flex: $labelCol;
+      }
+
+      .ant-form-item .ant-form-item-control-wrapper,
+      .form-item .form-control,
+      .form-item-tip .tip-text {
+        flex: $controlCol;
+      }
+    }
+  }
+
+
+  // TODO 哪里用到?
+  .form-info {
+    $labelWidth: 72px; // label6个文字的宽度:75px+ label与input间距:8px
+    clear: both;
+    > div {
+      float: left;
+
+      height: 100%;
+      width: 50%;
+      margin-bottom: 8px;
+      padding-right: 12px;
+
+      line-height: 22px;
+      label {
+        display: block;
+        float: left;
+
+        height: 28px;
+        width: $labelWidth;
+        padding-right: 8px;
+
+        text-align: right;
+        color: #666;
+        line-height: 28px;
+
+        overflow: auto;
+      }
+      > label:nth-child(2n) {
+        width: calc(100% - #{$labelWidth});
+        padding-left: 8px;
+
+        color: #444;
+        text-align: left;
+        background-color: #f0f0f0;
+        border-radius: 2px;
+      }
+      &:last-child {
+        width: 100%;
+      }
+      &:nth-child(2n) {
+        width: 50%;
+      }
+    }
+  }
+}

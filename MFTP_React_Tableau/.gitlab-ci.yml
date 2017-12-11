@@ -1,0 +1,21 @@
+build_package:
+    stage: build
+    script:
+        - ./build.sh $CI_BUILD_REF_NAME
+    only:
+        - master
+
+build_package_docker:
+  stage: build
+  script:
+    - ./build.sh $CI_BUILD_REF_NAME && mv imsui docker && docker build -t ims/imsui:$CI_BUILD_REF_NAME docker/ && docker push ims/imsui:$CI_BUILD_REF_NAME
+  only:
+    - tags
+
+
+deploy_to_nginx:
+    stage: deploy
+    script:
+        - ansible-playbook /deploy/quantexlite-playbook/imsui.yml  -i /deploy/quantexlite-playbook/$CI_BUILD_REF_NAME.host
+    only:
+        - master

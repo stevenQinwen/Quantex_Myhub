@@ -1,0 +1,14 @@
+.root {
+  width: 100%;
+  :global {
+    .ant-select-arrow {
+      display: block;
+    }
+  }
+}
+
+:global {
+  .ant-select-selection--single {
+    height: 22px;
+  }
+}

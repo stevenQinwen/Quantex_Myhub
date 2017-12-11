@@ -1,0 +1,14 @@
+.transfer-component {
+  height: 400px;
+  :global {
+    .ant-transfer-list { border-radius: 0; }
+    .ant-transfer-list-header-selected {
+      & > span:nth-child(1) { display: none; }
+      .ant-transfer-list-header-title {
+        left: 35px;
+        right: 0;
+        line-height: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,122 @@
+$border-color: #e3e8ee;
+.tree {
+  border: 1px solid $border-color;
+  width: 100%;
+  height: 100%;
+  .header {
+    background-color: #ecf6fd;
+    border-bottom: 1px solid $border-color;
+    line-height: 27px;
+    padding: 0 8px;
+    .title {
+      display: inline-block;
+      color: #666;
+      &.link {
+        color: #108ee9;
+        cursor: pointer;
+      }
+    }
+    .btn-group {
+      float: right;
+      color: #666;
+      cursor: pointer;
+      line-height: 20px;
+      i {
+        font-size: 14px;
+      }
+    }
+  }
+  :global {
+    .tree-content {
+      height: calc(100% - 28px);
+      >input {
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid $border-color;
+        &::-webkit-input-placeholder {
+          color: #b5b5b5;
+          opacity: .8;
+        }
+      }
+      >ul {
+        background-color: #fff;
+        height: calc(100% - 22px);
+        overflow: auto;
+      }
+    }
+    .tree-content-without-search {
+      >ul {
+        height: 100%;
+      }
+    }
+    .ant-tree {
+      padding: 8px;
+      &.ant-tree-show-line {
+        li:not(:last-child):before {
+          border-left: 1px dashed #d9d9d9!important;
+        }
+        li a {
+          color: #444;
+        }
+      }
+      .ant-tree-node-content-wrapper {
+        &:hover {
+          background-color: transparent;
+          .ant-tree-title {
+            .title {
+              background-color: #ecf6fd;
+            }
+          }
+        }
+        .ant-tree-title {
+          .title {
+            padding: 4px;
+          }
+        }
+      }
+      .ant-tree-node-selected {
+        background-color: transparent!important;
+        .ant-tree-title {
+          .title {
+            background-color: #d2eafb!important;
+          }
+        }
+      }
+    }
+  }
+  &.simple-tree {
+    border: 0;
+    :global {
+      .tree-content {
+        > input {
+          width: 100%;
+          border: 1px solid #dfdfdf;
+        }
+        > ul {
+          padding-left: 0;
+          background-color: transparent;
+        }
+      }
+      .ant-tree.ant-tree-show-line li span.ant-tree-switcher {
+        background-color: transparent;
+      }
+    }
+  }
+}
+:global {
+  .treenode-context-menu {
+    .ant-dropdown-menu-item-selected {
+      background-color: transparent;
+      color: rgba(0, 0, 0, .65);
+    }
+  }
+
+  // 设置 sidebar 中 Tree 组件搜索框的宽度
+  .sidebar-content-wrapper {
+    .tree-content {
+      > input {
+        width: 100% !important;
+      }
+    }
+  }
+}

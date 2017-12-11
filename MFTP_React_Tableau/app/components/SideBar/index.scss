@@ -1,0 +1,135 @@
+@import "styles/core/variables";
+
+:global {
+  .sidebar {
+    position: relative;
+    height: 100%;
+    //padding: $sidebar-spacer;
+  }
+  // 左侧划出
+  .#{$ns}sidebar-left {
+    @extend .sidebar;
+    .side-bar {
+      box-shadow: 6px 0 6px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  // 右侧划出
+  .#{$ns}sidebar-right {
+    @extend .sidebar;
+    .side-bar {
+      box-shadow: -6px 0 6px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.side-bar-content {
+  position: relative;
+}
+
+.side-bar {
+  position: fixed;
+  top: 34px;
+  bottom: 0;
+  overflow-y: auto;
+  background-color: #fff;
+  transform-origin: left; // 相对于被移动对象的左侧移动
+
+  > header {
+    padding: 8px;
+    font-size: 14px;
+    border-bottom: 1px solid $grey-5;
+
+    > span:last-child {
+      margin-left: 4px;
+    }
+
+    :global {
+      .anticon-close {
+        font-size: 16px;
+        vertical-align: -1px;
+        opacity: 0.4;
+        cursor: pointer;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  > div {
+    height: calc(100% - 38px);
+    //padding: 14px;
+    padding: 14px 6px 14px 14px; // 右侧留出滚动条的宽度
+    :global {
+      .sidebar-content-wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+
+        .sidebar-main-content {
+          flex: 1;
+          padding-right: 8px;
+          overflow: auto;
+          &::-webkit-scrollbar {
+            width: 8px;
+            border: 0;
+          }
+          &::-webkit-scrollbar-track {
+            display: none;
+          }
+          &::-webkit-scrollbar-thumb {
+            border-radius: 8px;
+            background-color: #ccc;
+            &:hover {
+              background-color: #aaa;
+            }
+          }
+        }
+        .sidebar-btn-wrapper {
+          display: flex;
+          margin-top: 8px;
+          padding-right: 8px;
+          > button {
+            flex: 1;
+            border-radius: 2px;
+            height: 28px;
+            // 除第一个元素外,其他按钮添加 margin 值
+            &:first-child ~ button {
+              margin-left: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.side-bar-panel {
+  position: relative;
+  z-index: $zIndex-sidebar - 1;
+  overflow: auto;
+}
+
+.side-bar-veil {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: black;
+  opacity: .4;
+  z-index: $zIndex-sidebar;
+}
+
+.side-bar-content,
+.side-bar-panel {
+    height: 100%;
+}
+
+.side-bar-close-btn {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}

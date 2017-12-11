@@ -1,0 +1,85 @@
+searchStore 示例配置
+```
+const config = {
+      api: new API('auth'),
+      searchUrl: '/api/v2/users/query',
+      defaultSearchParams: {},
+      searchParams: {},
+      events: {
+        onFetchSuccess: (list) => {},
+        onFetchFail: (list) => {}
+      },
+      fields: [{
+        name: 'dictKey$like',
+        label: '字典ID',
+        component: 'Input',
+        props: {}
+      }, {
+        name: 'dictValue',
+        label: '字典值',
+        component: 'Input',
+        props: {}
+      }, {
+        name: 'dictLabel$like',
+        label: '字典值翻译',
+        component: 'Input',
+        props: {}
+      }, {
+        name: 'inputGroup',
+        label: 'inputGroup',
+        component: 'InputGroup',
+        props: {
+          items: [
+            {
+              component: 'Input',
+              index: 0
+              props: {
+                placeholder: "最小金额"
+              }
+            }, {
+              component: '至'(<string>) | <span>至</span>(<ReactNode>) | '{ComponentType}'(<string>),
+              props: {
+                 // valid when component is ComponentType
+              }
+            }, {
+              component: 'Input',
+              index: 1,
+              props: {
+                placeholder: "最小金额"
+              }
+            }
+          ]
+        }
+      }],
+      columns: [{
+        title: '字典ID',
+        dataIndex: 'dictKey',
+      }, {
+        title: '字典值',
+        dataIndex: 'dictValue',
+      }, {
+        title: '字典值翻译',
+        dataIndex: 'dictLabel',
+      }, {
+        title: '字典英文值',
+        dataIndex: 'dictLabelEn',
+      }, {
+        title: '备注',
+        dataIndex: 'remark',
+      }, {
+        title: '操作',
+        dataIndex: '',
+        render: (text, record) => {
+          return (
+            <span>
+              <a onClick={() => { this.showEditForm(record); }}>编辑</a>
+              <span className="ant-divider" />
+              <Popconfirm title="确定删除?" onConfirm={() => { this.handleDelete(record); }}>
+                <a className="red-6">删除</a>
+              </Popconfirm>
+            </span>
+          );
+        }
+      }],
+    };
+```

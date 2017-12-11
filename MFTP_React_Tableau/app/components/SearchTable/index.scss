@@ -1,0 +1,31 @@
+:global {
+  .search-form {
+    overflow: hidden;
+    .ant-calendar-picker { width: 100%; }
+  }
+  .mini-search {
+    padding-bottom: 8px;
+    &.mini-search-form {
+      float: right;
+      width: 500px;
+    }
+    .ant-btn {
+      padding: 0 10px;
+      height: 22px;
+      line-height: 20px;
+      width: 100%;
+    }
+    .ant-form .ant-form-item { margin: 0; }
+    .mini-form-item { padding: 0 5px; }
+    .mini-form-switch { text-align: center; height: 22px; line-height: 22px; }
+  }
+  .search-table-form {
+    padding: 8px 0;
+    margin: 8px 0;
+    background-color: #f7f7f7;
+    border: 1px solid #e3e8ee;
+    .ant-form-item {
+      margin-bottom: 8px;
+    }
+  }
+}

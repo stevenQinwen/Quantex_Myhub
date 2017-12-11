@@ -1,0 +1,11 @@
+.root {
+  display: inline-block;
+  vertical-align: top;
+  :global {
+    .ant-radio-wrapper {
+      padding-top: 2px;
+      padding-bottom: 2px;
+    }
+    .vertical { display: block; }
+  }
+}

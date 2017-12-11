@@ -1,0 +1,9 @@
+.root {
+  &.empty-table-header-scroll {
+    :global {
+      .ant-table-empty .ant-table-content .ant-table-scroll .ant-table-body {
+        margin-top: 20px;
+      }
+    }
+  }
+}

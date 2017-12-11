@@ -1,0 +1,14 @@
+@import "styles/core/variables";
+
+.layout-page {
+  height: 100%;
+}
+:global {
+  .iframe {
+    display: inline-flex;
+    width: 100%;
+    height: calc(100% + 40px);
+    border: 0;
+    margin-top: -40px;
+  }
+}

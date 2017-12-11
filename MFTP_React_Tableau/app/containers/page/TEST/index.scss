@@ -1,0 +1,19 @@
+.root{
+  :global{
+    .title-group{
+      .select-group{
+        flex-wrap:nowrap;
+        width:250px;
+        .extra{
+          width:100px;
+        }
+      }
+    }
+    .chart{
+      flex:0.63;
+    }
+    .table{
+      flex:0.35;
+    }
+  }
+}

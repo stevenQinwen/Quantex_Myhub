@@ -1,0 +1,38 @@
+@import "styles/core/tools/colors";
+
+$action-width: 32px;
+$action-height: 12px;
+$ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+.expandable-view {
+  position: relative;
+  margin-bottom: $action-height;
+  background-color: #fff;
+  text-align: center;
+  border: 1px solid #dfdfdf;
+
+  .action {
+    position: absolute;
+    bottom: -$action-height;
+    left: 50%;
+    width: $action-width;
+    height: $action-height;
+    margin-left: -($action-height / 2);
+    text-align: center;
+    background-color: #dfdfdf;
+
+    i {
+      font-size: 8px;
+      vertical-align: super;
+    }
+  }
+}
+
+.show {
+  transition: all 1s $ease-out;
+}
+
+.hidden {
+  overflow: hidden;
+  transition: all 1s ease;
+}

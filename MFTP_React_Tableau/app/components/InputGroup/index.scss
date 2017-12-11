@@ -1,0 +1,16 @@
+.root {
+  position: relative;
+  .main{
+    flex-wrap: nowrap;
+    :global{
+      .input-group-item{
+        flex:1;
+        width:0;
+      }
+      .input-group-item-no-index{
+        flex:0;
+        width:100%;
+      }
+    }
+  }
+}

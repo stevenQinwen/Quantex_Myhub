@@ -1,0 +1,36 @@
+.root{
+  position: fixed;
+  left:0;
+  top:0;
+  z-index:99999;
+  background: #fff;
+  box-shadow: 0 0 20px #bbb;
+  :global{
+    .popover-plus-title{
+      font-size:16px;
+      background: #f7f7f7;
+      cursor:move;
+      line-height: 24px;
+      padding:5px;
+      .draggable-close-btn{
+        cursor:pointer;
+      }
+    }
+    .popover-plus-content{
+      padding:5px 10px;
+    }
+  }
+}
+
+.popover-plus-hovere-block{
+  background: #fff;
+  margin:-5px;
+  :global{
+    *{
+      cursor:pointer!important;
+    }
+    .popover-plus-title{
+      font-size:16px;
+    }
+  }
+}

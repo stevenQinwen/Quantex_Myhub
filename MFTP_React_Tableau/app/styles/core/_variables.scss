@@ -1,0 +1,60 @@
+// Name                   variables
+//
+// Description:  Define all variables (存放除颜色外基本变量)
+// ===============================================================
+
+@import "tools/colors";
+
+$ns: "qx-"; // Quantex UI 命名空间
+
+// global spacing
+// =================================================
+$spacer: 10px !default;
+
+// Reassign color vars to semantic color scheme
+$brand-primary:             $blue-6 !default;
+$brand-success:             $green-6 !default;
+$brand-info:                $blue-6 !default;
+$brand-warning:             $orange-6 !default;
+$brand-danger:              $red-6 !default;
+$brand-muted:               $grey-6 !default;
+
+
+ //Body
+ //
+ //Settings for the `<body>` element.
+
+$body-bg:       $grey-2 !default;
+//$body-color:    $gray-dark !default;
+$global-spacer: $spacer;
+$page-content-min-width: 1100px; // 主页内容最小宽度(左侧菜单除外)
+
+// Links
+//
+// Style anchor elements.
+
+$link-color:            $brand-primary !default;
+$link-decoration:       none !default;
+$link-hover-color:      darken($link-color, 15%) !default;
+$link-hover-decoration: underline !default;
+
+
+// zIndex list
+$zIndex-sidebar: 2;
+
+
+// SideBar
+//
+// variables for sidebar
+$sidebar-spacer: $spacer;
+
+// Forms
+
+$input-bg:                       #fff !default;
+$input-bg-disabled:              #f7f7f7 !default;
+$input-bg-readonly:              #f0f0f0 !default;
+
+$input-color:                    rgba(0, 0, 0, 0.65) !default;
+$addon-bg-color:                    #d9d9d9 !default;
+$input-height:                   22px !default;
+$input-border-radius:            2px !default;

@@ -1,0 +1,19 @@
+.root {
+  >div {
+    float: left;
+    &:first-child {
+      width: calc(50% - 4px);
+      margin-right: 8px;
+    }
+    &:last-child {
+      width: calc(50% - 4px);
+    }
+    :global {
+      .ant-calendar-picker {
+        input {
+          padding-right: 24px;
+        }
+      }
+    }
+  }
+}

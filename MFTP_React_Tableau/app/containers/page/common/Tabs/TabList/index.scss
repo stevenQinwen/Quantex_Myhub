@@ -1,0 +1,43 @@
+.layout-tab-list {
+  :global {
+    .ant-tabs-nav-scroll{
+      padding-left:80px;
+    }
+    .ant-tabs-tab{
+      user-select: none;
+      padding:0!important;
+      .layout-tab-item-span{
+        display: inline-block;
+        padding: 5px 16px 4px;
+      }
+      &.ant-tabs-tab-active{
+        .layout-tab-item-span{
+          padding-bottom:5px;
+        }
+      }
+    }
+  }
+}
+:global {
+  .tab-contextmenu {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    z-index: 1070;
+    display: block;
+    background-color: #fff;
+
+    &.tab-contextmenu-hidden {
+      display: none;
+    }
+
+    .tab-contextmenu-inner {
+      border: 1px solid #ddd;
+      .ant-menu-item {
+        height: 24px;
+        line-height: 24px;
+        padding: 0 8px;
+      }
+    }
+  }
+}

@@ -1,0 +1,133 @@
+// Name                antd
+//
+// Description:       存放覆盖蚂蚁组件样式的类
+
+
+:global {
+  //=============== Select
+  .ant-select {
+    &.ant-select-disabled > .ant-select-selection {
+      padding-top: 1px;
+      .ant-select-arrow {
+        display: none;
+      }
+    }
+    .ant-select-selection__choice {
+      border-radius: 2px;
+    }
+  }
+
+
+  //====================== Button
+  .ant-btn {
+    font-weight: normal;
+  }
+
+  // small size table pagination style
+  .ant-table-pagination.mini {
+    margin: 8px 0;
+  }
+
+
+  //===================== Popconfirm
+  .ant-popover-inner-content {
+    min-width: 180px;
+
+    .ant-popover-message {
+      > .anticon {
+        color: #f04134;
+      }
+    }
+  }
+
+
+  // =================== Tree
+  .ant-tree > li:first-child {
+    padding-top: 0;
+  }
+
+
+  // ================= dropdown
+  .ant-dropdown-link {
+    .action {
+      vertical-align: 0; // 图标和文字对齐
+    }
+  }
+
+  // ================= badge
+  .ant-badge-status-dot {
+    width: 6px;
+    height: 6px;
+  }
+  .ant-badge-status-success {
+    background-color: #87D068;
+  }
+  .ant-badge-status-error {
+    background-color: #FF5500;
+  }
+
+  // ==================== Transfer ——harry
+  .ant-transfer {
+    .ant-transfer-list {
+      width: calc(50% - 22px);
+    }
+    .ant-transfer-operation {
+      .anticon {
+        vertical-align: 0;
+      }
+    }
+
+  }
+  // ================== Input 禁用样式
+  .ant-input-number-disabled .ant-input-number-input {
+    opacity: 1;
+  }
+  .ant-input-number-disabled {
+    border: 0;
+  }
+
+  // antd Tabs
+  .ant-tabs-card {
+    .ant-tabs-nav-container {
+      font-size: 12px;
+    }
+    &.ant-tabs {
+      > .ant-tabs-bar {
+        .ant-tabs-nav-container {
+          height: 29px;
+        }
+      }
+    }
+  }
+
+  // antd Modal
+  .ant-modal {
+    .ant-modal-header {
+      padding: 6px 10px;
+    }
+    .ant-modal-body,
+    .ant-modal-footer {
+      padding: 10px;
+    }
+    .ant-modal-close-x {
+      width: 32px;
+      height: 32px;
+      line-height: 32px;
+    }
+
+    .ant-modal-footer {
+      > button {
+        padding: 2px 16px;
+        font-size: 12px;
+        height: auto;
+      }
+    }
+  }
+
+  .ant-collapse {
+    .ant-collapse-content-inactive {
+      display: block;
+      height: 0;
+    }
+  }
+}

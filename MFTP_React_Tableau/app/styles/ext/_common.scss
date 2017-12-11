@@ -1,0 +1,67 @@
+// Name          Common
+//
+// Description:      页面上公共样类
+
+:global {
+  // page 公共类
+  // ======================================================
+  .#{$ns}page-container {
+    position: relative;
+    height: 100%;
+    min-width: $page-content-min-width;
+    overflow: hidden;
+    > div {
+      height: 100%;
+      background-color: $body-bg;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+  }
+
+  // 设置页面上的 padding,(框架保留类,不可重复定义此类)
+  .#{$ns}main {
+    padding: $global-spacer;
+  }
+
+  // 左右布局,页面没有数据时展示信息
+  // =======================================================
+  .area-blank {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+
+    .anticon {
+      margin-right: 6px;
+      font-size: 14px;
+      color: $blue-6;
+    }
+  }
+
+  // 界面边界类, 用于没有sidebar 时设置界面边界padding
+  .boundary-spacer {
+    padding: $spacer;
+  }
+
+  // 左右布局, 页面上 title
+  // =============================================================
+  .page-title {
+    height: 14px;
+    font-size: 14px;
+    line-height: 1;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+
+  // 红色按钮 - 比如：撤消按钮
+  .btn-danger {
+    background-color: $red-5;
+    border-color:  $red-5;
+    color: #fff;
+    &:hover {
+      background-color: darken($red-5, 15%);
+      border-color: darken($red-5, 15%);
+    }
+  }
+}
